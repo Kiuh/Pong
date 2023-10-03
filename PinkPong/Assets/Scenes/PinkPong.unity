@@ -321,6 +321,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1648295267}
     m_Modifications:
     - target: {fileID: -8008884174396283143, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
+      propertyPath: ID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8008884174396283143, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: rb2d
       value: 
       objectReference: {fileID: 732825869}
@@ -453,6 +457,46 @@ Transform:
   - {fileID: 1648295267}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1415842692 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7551824508358299098, guid: efdebbb1caac5df4f8574e078f01ec24, type: 3}
+  m_PrefabInstance: {fileID: 1358278502610901977}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1415842694
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415842692}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!4 &1533667769 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6863457501776463997, guid: 052ded7e6f7f5354db34efcb67bf74e8, type: 3}
@@ -552,7 +596,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3867295283215072956, guid: f49b02cfd158e3e48baa70831e111818, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -612,7 +657,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7551824508358299098, guid: efdebbb1caac5df4f8574e078f01ec24, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1415842694}
   m_SourcePrefab: {fileID: 100100000, guid: efdebbb1caac5df4f8574e078f01ec24, type: 3}
 --- !u!1001 &1688517035541483038
 PrefabInstance:
@@ -622,6 +670,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1648295267}
     m_Modifications:
+    - target: {fileID: -8008884174396283143, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
+      propertyPath: ID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -8008884174396283143, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: gameManager
       value: 
@@ -691,6 +743,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3902573261486894252, guid: 052ded7e6f7f5354db34efcb67bf74e8, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 82531e41a7ce2384ba8ac9dba5f88bb3, type: 2}
     - target: {fileID: 4134913022106876802, guid: 052ded7e6f7f5354db34efcb67bf74e8, type: 3}
       propertyPath: m_Name
       value: Ball

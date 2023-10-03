@@ -13,7 +13,13 @@ public class Paddle : MonoBehaviour
 
     [SerializeField] private GameManager gameManager;
 
+    [Range(0, 2)] public int ID;
+
     private Vector3 startPosition;
+
+    private float delayBetweenPresses = 0.25f;
+    private bool pressedFirstTime = false;
+    private float lastPressedTime;
 
     private void Start()
     {
@@ -29,11 +35,38 @@ public class Paddle : MonoBehaviour
     {
         if (Input.GetButton(inputButton))
         {
-            Move(Input.GetAxis(inputButton));
+            if (pressedFirstTime)
+            {
+                bool isDoublePress = Time.time - lastPressedTime <= delayBetweenPresses;
+                if (isDoublePress)
+                {
+                    pressedFirstTime = false;
+                    Dash(Input.GetAxis(inputButton));
+                    Debug.Log("dash");
+                }
+            }
+            else
+            {
+                pressedFirstTime = true;
+                Debug.Log("move");
+                Move(Input.GetAxis(inputButton));
+            }
+
+            lastPressedTime = Time.time;
+        }
+
+        if (pressedFirstTime && Time.time - lastPressedTime > delayBetweenPresses)
+        {
+            pressedFirstTime = false;
         }
     }
 
     private void Move(float movement)
+    {
+        transform.RotateAround(target.position, new Vector3(0, 0, 1) * movement, Time.deltaTime * speed);
+    }
+
+    private void Dash(float movement)
     {
         transform.RotateAround(target.position, new Vector3(0, 0, 1) * movement, Time.deltaTime * speed);
     }
