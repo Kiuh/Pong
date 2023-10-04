@@ -40,8 +40,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4345148549856914876}
+  - component: {fileID: 5664682357699629367}
+  - component: {fileID: -1749030669710149032}
   - component: {fileID: 1166195882971257721}
-  - component: {fileID: -8008884174396283143}
   - component: {fileID: 6562627244041789414}
   - component: {fileID: 2551507618569423918}
   m_Layer: 0
@@ -67,6 +68,35 @@ Transform:
   - {fileID: 5587906678736347711}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5664682357699629367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172049429795459009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2de7617326259894aae4b8d8bc1f9fd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputButton: 
+  ID: 0
+--- !u!114 &-1749030669710149032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9172049429795459009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91d496af0aa6b624eb480ea3a6a0843b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb2d: {fileID: 6562627244041789414}
+  speed: 10
+  target: {fileID: 0}
 --- !u!212 &1166195882971257721
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -119,23 +149,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-8008884174396283143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9172049429795459009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b037d950522162845b62fc7fe7a1f6e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb2d: {fileID: 6562627244041789414}
-  inputButton: MovePlayer1
-  speed: 100
-  target: {fileID: 5587906678736347711}
-  gameManager: {fileID: 0}
 --- !u!50 &6562627244041789414
 Rigidbody2D:
   serializedVersion: 4
