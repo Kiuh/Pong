@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private float maxInitAngle = 0.67f;
     [Range(0, 10)][SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float speedMultiplier = 1.1f;
@@ -36,7 +36,7 @@ public class Ball : MonoBehaviour
     }
 }
 
-//я хз как это сделать адекватно честно 
+//Гї ГµГ§ ГЄГ ГЄ ГЅГІГ® Г±Г¤ГҐГ«Г ГІГј Г Г¤ГҐГЄГўГ ГІГ­Г® Г·ГҐГ±ГІГ­Г® 
 //private void OnTriggerEnter2D(Collider2D collision)
 //{
 //    if (collision.gameObject.name == "ScoreZone")
