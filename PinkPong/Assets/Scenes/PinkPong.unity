@@ -166,6 +166,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6077061079647794522, guid: efdebbb1caac5df4f8574e078f01ec24, type: 3}
   m_PrefabInstance: {fileID: 1358278502610901977}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &383480247
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383480248}
+  m_Layer: 0
+  m_Name: Center
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &383480248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 383480247}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1648295267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &414130876
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,14 +379,22 @@ PrefabInstance:
     - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 981585712}
+      objectReference: {fileID: 383480248}
     - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: dashSpeed
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
+      propertyPath: paddleInput
+      value: 
+      objectReference: {fileID: 732825877}
+    - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: pressSentry
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
+      propertyPath: dashDistance
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4345148549856914876, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -442,11 +481,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4345148549856914876, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
   m_PrefabInstance: {fileID: 1688517035541483038}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &981585712 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5587906678736347711, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
-  m_PrefabInstance: {fileID: 881359371}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1290560942 stripped
 MonoBehaviour:
@@ -554,11 +588,6 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 3902573261486894252, guid: 052ded7e6f7f5354db34efcb67bf74e8, type: 3}
   m_PrefabInstance: {fileID: 6686723671456412112}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1617870779 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5587906678736347711, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
-  m_PrefabInstance: {fileID: 1688517035541483038}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1648295266
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,6 +619,7 @@ Transform:
   m_Children:
   - {fileID: 965129708}
   - {fileID: 732825867}
+  - {fileID: 383480248}
   m_Father: {fileID: 1311365363}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1034563900817675373
@@ -723,6 +753,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1648295267}
     m_Modifications:
     - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
+      propertyPath: angle
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: input
       value: 
       objectReference: {fileID: 1290560946}
@@ -733,14 +767,22 @@ PrefabInstance:
     - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 1617870779}
+      objectReference: {fileID: 383480248}
     - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: dashSpeed
       value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
+      propertyPath: paddleInput
+      value: 
+      objectReference: {fileID: 1290560946}
+    - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: pressSentry
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: -1749030669710149032, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
+      propertyPath: dashDistance
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 4345148549856914876, guid: bbb9080b66a63754d99077bc8c5c400a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -831,6 +873,10 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 944422368233448984, guid: 052ded7e6f7f5354db34efcb67bf74e8, type: 3}
+      propertyPath: rigidbody
+      value: 
+      objectReference: {fileID: 1533667771}
     - target: {fileID: 3902573261486894252, guid: 052ded7e6f7f5354db34efcb67bf74e8, type: 3}
       propertyPath: m_Material
       value: 

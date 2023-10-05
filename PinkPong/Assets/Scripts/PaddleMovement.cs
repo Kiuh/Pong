@@ -1,13 +1,10 @@
 using UnityEngine;
-
 public class PaddleMovement : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb2d;
-    [SerializeField] private PaddleInput input;
     [SerializeField] private float speed;
-    [SerializeField] private float dashSpeed;
+    [SerializeField] private float dashDistance;
     [SerializeField] private Transform target;
-
+    [SerializeField] private PaddleInput paddleInput;
     private Vector3 startPosition;
 
     private void Start()
@@ -15,28 +12,35 @@ public class PaddleMovement : MonoBehaviour
         startPosition = transform.position;
     }
 
-    private void OnEnable()
-    {
-        input.IsDoublePressed += Dash;
-    }
-
-    private void OnDisable()
-    {
-        input.IsDoublePressed -= Dash;
-    }
-
-    public void ResetPaddle()
+    public void ResetPosition()
     {
         transform.position = startPosition;
     }
 
-    public void Move(float movement)
+    public void Move(RotationDirection rotateDirection)
     {
-        transform.RotateAround(target.position, new Vector3(0, 0, 1) * movement, Time.deltaTime * speed);
+        switch (rotateDirection)
+        {
+            case RotationDirection.ClockWise:
+                transform.RotateAround(target.position, Vector3.forward, Time.deltaTime * speed);
+                break;
+            case RotationDirection.CounterClockWise:
+                transform.RotateAround(target.position, Vector3.forward, Time.deltaTime * speed * -1);
+                break;
+        }
+
     }
 
-    private void Dash(float movement)
+    public void Dash(RotationDirection rotateDirection)
     {
-        transform.RotateAround(target.position, new Vector3(0, 0, 1) * movement, Time.deltaTime * dashSpeed);
+        switch (rotateDirection)
+        {
+            case RotationDirection.ClockWise:
+                transform.RotateAround(target.position, Vector3.forward, dashDistance * speed);
+                break;
+            case RotationDirection.CounterClockWise:
+                transform.RotateAround(target.position, Vector3.forward, dashDistance * speed * -1);
+                break;
+        }
     }
 }

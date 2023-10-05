@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] private new Rigidbody2D rigidbody;
     [SerializeField] private float maxInitAngle = 0.67f;
     [Range(0, 10)][SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float speedMultiplier = 1.1f;
-    private readonly float startX = 0;
-    private readonly float maxStartY = 4f;
+    [SerializeField] private float startX = 0;
+    [SerializeField] private float maxStartY = 4f;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class Ball : MonoBehaviour
     {
         Vector2 direction = Random.value < 0.5f ? Vector2.left : Vector2.right;
         direction.y = Random.Range(-maxInitAngle, maxInitAngle);
-        rb2d.velocity = direction * moveSpeed;
+        rigidbody.velocity = direction * moveSpeed;
     }
 
     private void ResetBall()

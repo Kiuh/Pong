@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PaddleInput : MonoBehaviour
@@ -9,28 +8,26 @@ public class PaddleInput : MonoBehaviour
     private bool pressedFirstTime = false;
     private float lastPressedTime;
 
-    public event Action<float> IsDoublePressed;
-
     private void Update()
     {
+        RotationDirection direction = (Input.GetAxis(inputButton) > 0) ? RotationDirection.ClockWise : RotationDirection.CounterClockWise;
         if (Input.GetButtonUp(inputButton))
         {
-            DoublePressCheck(Input.GetAxis(inputButton));
+            DoublePressCheck(direction);
         }
-
         if (Input.GetButton(inputButton))
         {
-            movement.Move(Input.GetAxis(inputButton));
+            movement.Move(direction);
         }
     }
 
-    private void DoublePressCheck(float direction)
+    private void DoublePressCheck(RotationDirection direction)
     {
         if (pressedFirstTime)
         {
             if (Time.time - lastPressedTime <= delayBetweenPresses)
             {
-                IsDoublePressed?.Invoke(direction);
+                movement.Dash(direction);
             }
             pressedFirstTime = !pressedFirstTime;
         }
@@ -43,4 +40,10 @@ public class PaddleInput : MonoBehaviour
             pressedFirstTime = !pressedFirstTime;
         }
     }
+}
+
+public enum RotationDirection
+{
+    ClockWise = 1,
+    CounterClockWise = -1
 }
