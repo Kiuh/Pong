@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    [SerializeField] private new Rigidbody2D rigidbody;
+    [SerializeField] private Rigidbody2D rigidbody;
     [SerializeField] private float maxInitAngle = 0.67f;
     [Range(0, 10)][SerializeField] private float moveSpeed = 1f;
     [SerializeField] private float speedMultiplier = 1.1f;
-    [SerializeField] private float startX = 0;
-    [SerializeField] private float maxStartY = 4f;
+    private readonly float startX = 0;
+    private readonly float maxStartY = 4f;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class Ball : MonoBehaviour
     {
         Vector2 direction = Random.value < 0.5f ? Vector2.left : Vector2.right;
         direction.y = Random.Range(-maxInitAngle, maxInitAngle);
-        rigidbody.velocity = direction * moveSpeed;
+        rb2d.velocity = direction * moveSpeed;
     }
 
     private void ResetBall()
@@ -36,7 +36,7 @@ public class Ball : MonoBehaviour
     }
 }
 
-//ÿ õç êàê ýòî ñäåëàòü àäåêâàòíî ÷åñòíî 
+//Ã¿ ÃµÃ§ ÃªÃ Ãª Ã½Ã²Ã® Ã±Ã¤Ã¥Ã«Ã Ã²Ã¼ Ã Ã¤Ã¥ÃªÃ¢Ã Ã²Ã­Ã® Ã·Ã¥Ã±Ã²Ã­Ã® 
 //private void OnTriggerEnter2D(Collider2D collision)
 //{
 //    if (collision.gameObject.name == "ScoreZone")
