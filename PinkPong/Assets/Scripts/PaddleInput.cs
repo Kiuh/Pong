@@ -11,7 +11,7 @@ public class PaddleInput : MonoBehaviour
     private void Update()
     {
         RotationDirection direction = (Input.GetAxis(inputButton) > 0) ? RotationDirection.ClockWise : RotationDirection.CounterClockWise;
-        if (Input.GetButtonUp(inputButton))
+        if (Input.GetButtonDown(inputButton))
         {
             DoublePressCheck(direction);
         }
