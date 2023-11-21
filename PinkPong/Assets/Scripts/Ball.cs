@@ -1,7 +1,9 @@
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Ball : MonoBehaviour
+public class Ball : SerializedMonoBehaviour
 {
     [SerializeField]
     private new Rigidbody2D rigidbody;
@@ -24,8 +26,13 @@ public class Ball : MonoBehaviour
     public UnityEvent<PaddleMovement> OnPaddleCollide;
     public UnityEvent OnZoneReached;
 
+    [OdinSerialize]
+    public string StringOdinSerialize { get; set; } = "werfg";
+
     public void AddForce()
     {
+        StringOdinSerialize = "d";
+
         Vector2 direction = Random.value < 0.5f ? Vector2.left : Vector2.right;
         direction.y = Random.Range(-maxInitAngle, maxInitAngle);
         rigidbody.velocity = direction * moveSpeed;
